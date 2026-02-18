@@ -44,7 +44,14 @@ class TesseractOCREngine:
 
             # Calculate average confidence
             # Filter out -1 confidence scores (often for non-text regions)
-            confidences = [int(c) for c in data['conf'] if c.isdigit() and int(c) > 0]
+            confidences = []
+            for c in data['conf']:
+                try:
+                    conf_val = int(c) if isinstance(c, (int, float)) else int(float(c))
+                    if conf_val > 0:
+                        confidences.append(conf_val)
+                except (ValueError, TypeError):
+                    continue
             average_confidence = sum(confidences) / len(confidences) / 100 if confidences else 0.0
 
             logger.info(f"OCR completed. Extracted text length: {len(text)}, Confidence: {average_confidence:.2f}")
