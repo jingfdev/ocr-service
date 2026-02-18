@@ -1,4 +1,4 @@
-_# ocr-service/app/models.py
+# ocr-service/app/models.py
 
 from pydantic import BaseModel, Field
 from typing import Literal

@@ -1,4 +1,4 @@
-_# ocr-service/app/config.py
+# ocr-service/app/config.py
 
 import os
 from pydantic import BaseModel

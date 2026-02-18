@@ -35,7 +35,7 @@ async def extract_text(file: UploadFile = File(...), language: Optional[Language
         logger.warning(f"Invalid file type uploaded: {file_extension}")
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail=OCRErrorResponse(success=False, message=f"Invalid file type. Supported types: {", ".join(allowed_extensions)}.").model_dump()
+            detail=OCRErrorResponse(success=False, message=f"Invalid file type. Supported types: {', '.join(allowed_extensions)}.").model_dump()
         )
 
     # Check file size after reading it into memory (FastAPI handles this for UploadFile)

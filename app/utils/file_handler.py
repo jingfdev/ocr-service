@@ -1,4 +1,4 @@
-_# ocr-service/app/utils/file_handler.py
+# ocr-service/app/utils/file_handler.py
 
 import os
 import shutil

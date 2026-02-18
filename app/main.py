@@ -1,4 +1,4 @@
-_# ocr-service/app/main.py
+# ocr-service/app/main.py
 
 import logging
 from contextlib import asynccontextmanager
